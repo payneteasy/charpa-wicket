@@ -10,7 +10,7 @@
 
     <description>Progress components for Charpa</description>
 
-    <url>https://github.com/payneteasy/charpa</url>
+    <url>https://github.com/payneteasy/charpa-wicket</url>
 
     <modules>
         <module>charpa-wicket-service</module>
@@ -18,9 +18,9 @@
     </modules>
 
     <scm>
-        <connection>scm:git:git@github.com:payneteasy/charpa.git</connection>
-        <developerConnection>scm:git:git@github.com:payneteasy/charpa.git</developerConnection>
-        <url>https://github.com/payneteasy/charpa</url>
+        <connection>scm:git:git@github.com:payneteasy/charpa-wicket.git</connection>
+        <developerConnection>scm:git:git@github.com:payneteasy/charpa-wicket.git</developerConnection>
+        <url>https://github.com/payneteasy/charpa-wicket</url>
     </scm>
 
     <developers>
