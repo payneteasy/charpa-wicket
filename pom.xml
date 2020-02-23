@@ -116,19 +116,14 @@
                 <version>${slf4j.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>jcl-over-slf4j</artifactId>
                 <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>1.2.14</version>
             </dependency>
 
             <!--  JUNIT DEPENDENCY FOR TESTING -->
@@ -235,7 +230,7 @@
 
     <properties>
         <wicket.version>6.6.0</wicket.version>
-        <slf4j.version>1.6.5</slf4j.version>
+        <slf4j.version>1.7.25</slf4j.version>
         <jetty.version>6.1.4</jetty.version>
     </properties>
 
