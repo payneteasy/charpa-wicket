@@ -48,11 +48,11 @@ public class ProgressServiceImpl implements IProgressInfoService, IProgressManag
 	public void setDefaultQualifier(String aQualifier) {
     	theDefaultQualifier = aQualifier;
     }
-    
+
     public void setRemoveThresholdMillis(long aMillis) {
     	theRemoveThresholdMillis = aMillis;
     }
-    
+
     protected IProgressStorageStrategy selectStorageStrategy(ProgressId aProgressId) {
     	for (Entry<String, IProgressStorageStrategy> entry : theStorageStrategies.entrySet()) {
     		if (aProgressId.toString().startsWith(entry.getKey())) {
@@ -93,10 +93,14 @@ public class ProgressServiceImpl implements IProgressInfoService, IProgressManag
     // INFO INTERFACE
     //
     public void invoke(ProgressId aProgressId, Runnable aRunnable) {
-        if(LOG.isDebugEnabled()) {
+        invoke(aProgressId, theDefaultExecutor, aRunnable);
+    }
+
+    public void invoke(ProgressId aProgressId, Executor executor, Runnable aRunnable) {
+        if (LOG.isDebugEnabled()) {
             LOG.debug("{}: INVOKED", aProgressId);
         }
-        theExecutor.execute(aRunnable);
+        executor.execute(aRunnable);
     }
 
     public IProgressInfo getProgressInfo(ProgressId aProgressId) {
@@ -274,7 +278,7 @@ public class ProgressServiceImpl implements IProgressInfoService, IProgressManag
         return info;
     }
 
-    private final Executor theExecutor = Executors.newSingleThreadExecutor();
+    private final Executor theDefaultExecutor = Executors.newSingleThreadExecutor();
     private Map<String, IProgressStorageStrategy> theStorageStrategies = new HashMap<String, IProgressStorageStrategy>();
     private IResourceResolver theResourceResolver = new DefaultResourceResolver();
     private IProgressStorageStrategy theDefaultStorageStrategy = new InMemoryStorageStrategy(new ISecurityServiceFactory() {
