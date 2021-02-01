@@ -2,6 +2,7 @@ package com.googlecode.charpa.progress.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executor;
 
 /**
  * Progress service
@@ -16,7 +17,7 @@ public interface IProgressInfoService {
 
     ProgressId createProgressId(String aName, Map<String, String> aPageParameters, String aQualifier);
 
-    void invoke(ProgressId aProgressId, Runnable aRunnable);
+    void invoke(ProgressId aProgressId, Executor executor, Runnable aRunnable);
 
     IProgressInfo getProgressInfo(ProgressId aProgressId);
 
