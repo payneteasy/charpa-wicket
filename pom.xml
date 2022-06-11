@@ -231,7 +231,7 @@
     <properties>
         <wicket.version>6.6.0</wicket.version>
         <slf4j.version>1.7.25</slf4j.version>
-        <jetty.version>6.1.17</jetty.version>
+        <jetty.version>6.1.23</jetty.version>
     </properties>
 
     <licenses>
